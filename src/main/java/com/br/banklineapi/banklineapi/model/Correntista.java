@@ -1,16 +1,27 @@
 package com.br.banklineapi.banklineapi.model;
 
-public class Correntista {
-    private Integer id;
-    private String cpf;
-    private String nome;
-    private Correntista conta;
+import javax.persistence.*;
 
-    public Correntista getConta() {
+@Entity
+@Table(name = "tab_correntista")
+
+public class Correntista {
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Integer id;
+    @Column(length = 20)
+    private String cpf;
+    @Column(length = 60)
+    private String nome;
+    @Embedded
+    private Conta conta;
+
+    public Conta getConta() {
         return conta;
     }
 
-    public void setConta(Correntista conta) {
+    public void setConta(Conta conta) {
         this.conta = conta;
     }
 
