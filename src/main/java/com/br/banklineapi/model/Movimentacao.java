@@ -1,7 +1,9 @@
 package com.br.banklineapi.model;
 
+import com.fasterxml.jackson.annotation.JsonFormat;
+
 import javax.persistence.*;
-import java.time.LocalDate;
+import java.time.LocalDateTime;
 
 @Entity
 @Table(name = "tab_movimentacao")
@@ -9,8 +11,10 @@ public class Movimentacao {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
-    @Column(name = "dt_hora")
-    private LocalDate datahora;
+
+    @JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss")
+    @Column(name = "data_hora")
+    private LocalDateTime dataHora;
     private String descricao;
     private Double valor;
     @Enumerated(EnumType.STRING)
@@ -28,12 +32,13 @@ public class Movimentacao {
         this.id = id;
     }
 
-    public LocalDate getDatahora() {
-        return datahora;
+
+    public LocalDateTime getDataHora() {
+        return dataHora;
     }
 
-    public void setDatahora(LocalDate datahora) {
-        this.datahora = datahora;
+    public void setDataHora(LocalDateTime dataHora) {
+        this.dataHora = dataHora;
     }
 
     public String getDescricao() {

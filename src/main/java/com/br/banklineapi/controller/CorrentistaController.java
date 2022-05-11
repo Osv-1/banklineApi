@@ -15,16 +15,13 @@ public class CorrentistaController {
 
     @Autowired
     private CorrentistaRepository cr;
-
     @Autowired
     private CorrentistaService cs;
-
 
     @GetMapping
     public List<Correntista> findAll() {
         return cr.findAll();
     }
-
     @PostMapping
     public void save(@RequestBody NovoCorrentista correntista) {
         cs.save(correntista);
