@@ -1,4 +1,4 @@
-package com.br.banklineapi.banklineapi.model;
+package com.br.banklineapi.model;
 
 public enum MovimentacaoTipo {
     RECEITA,

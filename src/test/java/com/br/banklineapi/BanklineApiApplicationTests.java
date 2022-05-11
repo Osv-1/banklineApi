@@ -1,4 +1,4 @@
-package com.br.banklineapi.banklineapi;
+package com.br.banklineapi;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
